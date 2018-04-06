@@ -572,6 +572,22 @@ following steps with the one you are using.
    You can of course modify this periodicity, this `Wikipedia page <http://en.wikipedia.org/wiki/Cron#CRON_expression>`_
    has a good overview of the crontab syntax.
 
+
+Debugging
+=========
+
+Every time you pull new changes into your existing repository, you should restart services to make sure all the files are compiled. You can use the following command for this::
+
+$ supervisorctl restart all
+
+If you run into issues while pulling new changes into your existing repository, you should run setup.py which will set up the environment correctly. See below::
+
+$ python setup.py egg_info
+
+Also, if you run into issues with the website being inaccessible, you can restart the http service by using the following command::
+
+$ service httpd restart
+
 Community
 =========
 
